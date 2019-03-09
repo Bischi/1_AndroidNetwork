@@ -9,9 +9,10 @@ import android.widget.TextView;
 import be.howest.lukas.addressbook.R;
 import be.howest.lukas.addressbook.activities.EmployeeDetailActivity;
 import be.howest.lukas.addressbook.models.Contact;
+import be.howest.lukas.addressbook.models.Employee;
 
 public class EmployeeRecyclerViewHolder extends RecyclerView.ViewHolder {
-    private Contact _contact;
+    private Employee _employee;
     private TextView _textView;
 
     public static final String S_CONTACT = EmployeeRecyclerViewHolder.class.getCanonicalName() + ".CONTACT";
@@ -28,14 +29,14 @@ public class EmployeeRecyclerViewHolder extends RecyclerView.ViewHolder {
         return _textView;
     }
 
-    public void setContact(Contact contact) {
-        _contact = contact;
-        _textView.setText(_contact.getFirstName());
+    public void setEmployee(Employee employee) {
+        _employee = employee;
+        _textView.setText(_employee.getFirstname());
     }
 
     public void onClick() {
         Intent intent = new Intent(_textView.getContext(), EmployeeDetailActivity.class);
-        intent.putExtra(S_CONTACT, _contact);
+        intent.putExtra(S_CONTACT, _employee);
         _textView.getContext().startActivity(intent);
     }
 }
