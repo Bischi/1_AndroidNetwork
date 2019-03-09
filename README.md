@@ -19,7 +19,7 @@ Source: https://developer.android.com/training/volley
 * Offers `JsonObjectRequest`and `JsonArrayRequest` for easy retrieving of JSON results
 * Custom Implementations of Requests are madable
 
-**Disadvantage** 
+**Disadvantages** 
 * > Volley is not suitable for large download or streaming operations, since Volley holds all responses in memory during parsing
 * external library must be included
 
