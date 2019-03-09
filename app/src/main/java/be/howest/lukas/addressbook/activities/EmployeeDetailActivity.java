@@ -8,6 +8,7 @@ import android.widget.TextView;
 import be.howest.lukas.addressbook.R;
 import be.howest.lukas.addressbook.employeeRecyclerView.EmployeeRecyclerViewHolder;
 import be.howest.lukas.addressbook.models.Contact;
+import be.howest.lukas.addressbook.models.Employee;
 
 public class EmployeeDetailActivity extends AppCompatActivity {
 
@@ -17,10 +18,10 @@ public class EmployeeDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contact_detail);
 
         Intent intent = this.getIntent();
-        Contact contact = (Contact)intent.getSerializableExtra(EmployeeRecyclerViewHolder.S_CONTACT);
-        if(contact != null) {
-            ((TextView)findViewById(R.id.contactDetail_tv_firstName)).setText(contact.getFirstName());
-            ((TextView)findViewById(R.id.contactDetail_tv_lastName)).setText(contact.getLastName());
+        Employee employee = (Employee) intent.getSerializableExtra(EmployeeRecyclerViewHolder.S_CONTACT);
+        if(employee != null) {
+            ((TextView)findViewById(R.id.contactDetail_tv_firstName)).setText(employee.getFirstname());
+            ((TextView)findViewById(R.id.contactDetail_tv_lastName)).setText(employee.getLastname());
         }
     }
 }

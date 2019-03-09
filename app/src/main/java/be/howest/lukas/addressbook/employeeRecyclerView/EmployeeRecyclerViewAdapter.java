@@ -9,13 +9,13 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import be.howest.lukas.addressbook.R;
-import be.howest.lukas.addressbook.models.Contact;
+import be.howest.lukas.addressbook.models.Employee;
 
 public class EmployeeRecyclerViewAdapter extends RecyclerView.Adapter<EmployeeRecyclerViewHolder> {
-    private List<Contact> _contacts;
+    private List<Employee> _employees;
 
-    public EmployeeRecyclerViewAdapter(List<Contact> contacts) {
-        _contacts = contacts;
+    public EmployeeRecyclerViewAdapter(List<Employee> employees) {
+        _employees = employees;
     }
 
     @NonNull
@@ -27,13 +27,13 @@ public class EmployeeRecyclerViewAdapter extends RecyclerView.Adapter<EmployeeRe
 
     @Override
     public void onBindViewHolder(@NonNull EmployeeRecyclerViewHolder viewHolder, int i) {
-        Contact contact = _contacts.get(i);
-        viewHolder.setContact(contact);
+        Employee employee = _employees.get(i);
+        viewHolder.setEmployee(employee);
     }
 
     @Override
     public int getItemCount() {
-        return _contacts.size();
+        return _employees.size();
     }
 
 }
