@@ -16,6 +16,7 @@ public class EmployeeRecyclerViewAdapter extends RecyclerView.Adapter<EmployeeRe
 
     public EmployeeRecyclerViewAdapter(List<Employee> employees) {
         _employees = employees;
+        _employees.addAll(employees);
     }
 
     @NonNull

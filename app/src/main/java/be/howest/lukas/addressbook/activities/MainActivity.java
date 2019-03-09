@@ -26,6 +26,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import be.howest.lukas.addressbook.R;
+import be.howest.lukas.addressbook.employeeRecyclerView.DividerItemDecoration;
 import be.howest.lukas.addressbook.employeeRecyclerView.EmployeeRecyclerViewAdapter;
 import be.howest.lukas.addressbook.models.Employee;
 
@@ -39,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RecyclerView recyclerView = this.findViewById(R.id.recyclerViewContacts);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new EmployeeRecyclerViewAdapter(_employees));
         getEmployeesFromSRV();
     }
 
